@@ -1019,6 +1019,7 @@ function acceptOffer (offer) {
             log.debug(err.stack);
         } else {
             offer.log('trade', 'successfully accepted' + (status == 'pending' ? '; confirmation required' : ''));
+            Automatic.alert('trade',offer.summary());
         }
     });
 }
