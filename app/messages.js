@@ -525,11 +525,7 @@ function friendMessage (steamID, message) {
             const todayCurrencies = Prices.valueToCurrencies(today);
             const potentialCurrencies = Prices.valueToCurrencies(potential);
 
-            let response = 'You\'ve made ' + utils.currencyAsText(todayCurrencies) + ' today, ' + utils.currencyAsText(totalCurrencies) + ' in total';
-            if (potential > 0) {
-                response += ' (' + utils.currencyAsText(potentialCurrencies) + ' more if all items were sold)';
-            }
-            response += '.';
+            let response = 'Today: ' + utils.currencyAsText(todayCurrencies) + '\nAll Time: ' + utils.currencyAsText(totalCurrencies);
 
             Automatic.message(steamID64, response);
         } else if (command == 'removefriends' && Automatic.isOwner(steamID64)) {
